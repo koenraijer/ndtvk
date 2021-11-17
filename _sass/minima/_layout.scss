@@ -638,6 +638,16 @@
   margin-bottom: $spacing-unit / 2;
 }
 
+.groepsfoto {
+  @media screen and (min-width: $on-medium) {
+    max-width: 35%;
+  }
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+  
+
+}
+
 .donerenknop {
   background-color: $accent;
       border-radius: 7.5px;

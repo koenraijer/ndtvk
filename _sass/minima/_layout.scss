@@ -92,6 +92,10 @@
       &:hover {
         background-color: $dummy-color;
       }
+
+      @media screen and (max-width: $on-palm) {
+        display: none;
+      }
     }
   }
 
@@ -564,12 +568,18 @@
 .about-parent {
   display: grid;
   justify-content: stretch;
+  grid-column: 1fr;
   gap: $spacing-unit;
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $on-medium) {
+
+  .about-parent {
+    grid-column: 1fr 1fr; 
+  }
+
   .about-child:nth-child(1) {
     grid-row: 1/2;
     grid-column: 1/2;
@@ -599,7 +609,6 @@
 .about-child {
   position: relative;
   border-radius: 5px;
-  max-width: 30vw;
 
   p {
     padding-left: $spacing-unit / 2;
@@ -632,12 +641,18 @@
 .donerenknop {
   background-color: $accent;
       border-radius: 7.5px;
-      color: $background-color;
+      padding: 5px 10px;
+      color: $background-color !important;
       text-decoration: none;
       font-family: $header-font-family;
       font-size: 1.35rem;
       transform: translateY(-5px);
       &:hover {
-        background-color: $dummy-color;
+        background-color: $dummy-color !important;
       }
+    display: none;
+    @media screen and (max-width: $on-palm) {
+      display: inline;
+    }
 }
+

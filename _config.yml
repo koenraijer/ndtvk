@@ -49,6 +49,7 @@ minima:
 header_pages:
   - over.html
   - blog.html
+  - projecten.html
 
 
 # Build settings

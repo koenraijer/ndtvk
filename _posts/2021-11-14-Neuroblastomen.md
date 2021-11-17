@@ -5,10 +5,9 @@ category: KiKa
 tags: informatie
 title: "Uitleg onderzoek naar neuroblastoom"
 ---
-#### Wat is een neuroblastoom?
 Neuroblastoom is de meest voorkomende buiten de schedel gelegen solide tumor. Neuroblastomen zijn tumoren die zich bij elke patiënt heel anders kunnen gedragen. 
-
-Bij laag-risico patiënten kan de tumor spontaan verdwijnen, maar bij hoog-risico patiënten verloopt de ziekte, ondanks de uitgebreide behandelingsmogelijkheden, meestal zeer snel en fataal. De overlevingskans voor deze hoog-risico patiënten is minder dan 30%.<!--more-->
+<!--more-->
+Bij laag-risico patiënten kan de tumor spontaan verdwijnen, maar bij hoog-risico patiënten verloopt de ziekte, ondanks de uitgebreide behandelingsmogelijkheden, meestal zeer snel en fataal. De overlevingskans voor deze hoog-risico patiënten is minder dan 30%.
  
 #### Welke factoren hebben invloed?
 Er zijn verschillende factoren die invloed hebben op de uitkomst van de ziekte. Het wel of niet aanwezig zijn van uitzaaiingen is daar één van. De helft van de patiënten heeft reeds uitzaaiingen op het moment dat de ziekte wordt vastgesteld en het is niet mogelijk om te voorspellen wie van hen het overleeft. 

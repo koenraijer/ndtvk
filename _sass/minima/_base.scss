@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 $accent:                  #cc8000 !default;
-$accent-color-light:      rgb(204, 128, 0) !default;
+$accent-color-light:      lighten($accent, 30%) !default;
 
 $brand-color:             rgb(140, 202, 229) !default;
 $brand-color-light:         lighten($brand-color, 5%) !default;

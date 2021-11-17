@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+@font-face {
+  font-family: "color-emoji";
+  src: local("Apple Color Emoji"),
+       local("Segoe UI Emoji"), 
+       local("Segoe UI Symbol"),
+       local("Noto Color Emoji");
+}
+
+/* montserrat-700 - latin-ext_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/montserrat-v15-latin-ext_latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/montserrat-v15-latin-ext_latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/montserrat-v15-latin-ext_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v15-latin-ext_latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/montserrat-v15-latin-ext_latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/montserrat-v15-latin-ext_latin-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+/* merriweather-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/merriweather-v22-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('..'),
+       url('../fonts/merriweather-v22-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/merriweather-v22-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/merriweather-v22-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/merriweather-v22-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/merriweather-v22-latin-ext_latin-regular.svg#Merriweather') format('svg'); /* Legacy iOS */
+}
+
+/* Recoleta regular */
+@font-face {
+  font-family: 'Recoleta';
+  src: url('Recoleta-Regular.eot');
+  src: local('Recoleta Regular'), local('Recoleta-Regular'),
+      url('/assets/fonts/Recoleta-Regular.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/Recoleta-Regular.woff2') format('woff2'),
+      url('/assets/fonts/Recoleta-Regular.woff') format('woff'),
+      url('/assets/fonts/Recoleta-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Recoleta bold */
+@font-face {
+  font-family: 'Recoleta-bold';
+  src: url('RecoletaAlt-Bold.eot');
+  src: local('Recoleta Alt Bold'), local('RecoletaAlt-Bold'),
+      url('/assets/fonts/RecoletaAlt-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/RecoletaAlt-Bold.woff2') format('woff2'),
+      url('/assets/fonts/RecoletaAlt-Bold.woff') format('woff'),
+      url('/assets/fonts/RecoletaAlt-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Source Sans Pro Semibold */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/assets/fonts/SourceSansPro-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+$base-font-family: "Merriweather", serif;
+$p-font-family: "Merriweather", serif;
+$header-font-family: "Source Sans Pro", "Montserrat", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace, color-emoji;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.75 !default;
+$short-line-height: 1.75 * 0.875 !default;
+
+$spacing-unit:     30px !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+// Notice the following mixin uses max-width, in a deprecated, desktop-first
+// approach, whereas media queries used elsewhere now use min-width.
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
+}
+
+// Import pre-styling-overrides hook and style-partials.
+@import
+  "minima/base",             // Defines element resets.
+  "minima/layout"            // Defines structure and style based on CSS selectors.
+;

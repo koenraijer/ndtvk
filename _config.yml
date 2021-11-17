@@ -1,0 +1,68 @@
+title: Naar de top voor KiKA
+author:
+  name: Koen
+  email: koenrayer@gmail.com
+description: > # this means to ignore newlines until "show_excerpts:"
+  Grote hoogtes overwinnen voor het goede doel. 
+
+show_excerpts: true # set to true to show excerpts on the homepage
+excerpt_separator: <!--more-->
+
+include: ['_tags']
+
+minima:
+  date_format: "%d-%m-%Y"
+  social_links:
+    # twitter: jekyll
+    # linkedin: jekyll
+    # devto: jekyll
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # linkedin: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+    # keybase: jekyll
+
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+    # GitLab instances
+    # gitlab:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+header_pages:
+  - veiling.html
+  - over.html
+  - blog.html
+
+
+# Build settings
+theme: minima
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-sitemap
+ - jekyll-minifier
+ - jekyll-spaceship
+
+minima:
+  skin: myskin
+
+permalink: /:title/

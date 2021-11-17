@@ -1,0 +1,633 @@
+/**
+ * Site header
+ */
+.site-header {
+  min-height: $spacing-unit * 1.865;
+  max-height: 7.5vh;
+}
+
+.site-nav {
+  padding-right: $spacing-unit / 2;
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: $spacing-unit;
+    text-align: center;
+    position: relative;
+    z-index: 100 !important;
+
+    > svg path {
+      fill: $text-color;
+    }
+
+    &:hover > svg path {
+      fill: $accent;
+      transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease;
+    }
+  }
+
+  label[for="nav-trigger"] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  input ~ .trigger {
+    clear: both;
+    display: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .trigger {
+    background: $background-color;
+    opacity: 0.95;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+    .page-link {
+      display: block;
+    }
+  } 
+
+  .trigger-menu {
+    margin-top: 50%;
+  }
+
+  .regular-menu {
+    transform: translateY($spacing-unit / 2);
+    .page-link {
+      display: none;
+      padding: 5px 10px;
+      float: right;
+      margin-left: auto;
+    }
+    .page-link:nth-child(1) {
+      display: inline;
+      background-color: $accent;
+      border-radius: 7.5px;
+      color: $background-color;
+      text-decoration: none;
+      font-family: $header-font-family;
+      font-size: 1.35rem;
+      transform: translateY(-5px);
+      &:hover {
+        background-color: $dummy-color;
+      }
+    }
+  }
+
+
+  .trigger-menu {
+    .page-link {
+      padding: 0 0 $spacing-unit;
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  .page-link {
+    font-size: 1.1rem;
+    // Gaps between nav items, but not on the last one
+    margin-left: 20px;
+    
+  }
+
+  .page-title {
+    font-size: 1.1rem;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 620px) { /*turnt into 620 instead of $on-medium bc otherwise the logo didn't fit*/
+    position: static;
+    border: none;
+
+    .page-link:first-child{
+      background-color: $accent;
+      color: $background-color;
+      &:hover {
+        background-color: $dummy-color;
+      }
+    }
+      
+    label[for="nav-trigger"] {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    input ~ .trigger {
+      display: none;
+    }
+
+    .trigger {
+      display: none;
+      background: transparent;
+      .page-link {
+        display: none;
+      }
+    }
+
+    .regular-menu {
+      .page-link {
+        display: inline;
+      }
+    }
+
+  }
+}
+
+
+
+.site-title {
+  margin-top: -($spacing-unit * 1.865);
+  .logo {
+    height: $spacing-unit * 1.5;
+    position: relative;
+    display: inline-block;
+    transform: translateY(-$spacing-unit * 0.3);
+  }
+  .logo-title {
+    position: relative;
+    transform: translateY(-$spacing-unit * 0.65);
+    display: inline-block;
+    font-family: $header-font-family;
+    font-size: 1.35rem;
+  }
+
+  a {
+    text-decoration:none;
+  }
+}
+
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: 0;
+  flex: 1 0 auto;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+  @media screen and (min-width: $on-medium) {
+    padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+  position: relative;
+  > li {
+    margin-bottom: $spacing-unit;
+    background: transparent;
+    padding-top: $spacing-unit / 2;
+    padding-bottom: $spacing-unit / 2;
+    @media screen and (min-width: $on-medium) {
+      padding-left: $spacing-unit / 2;
+      padding-right: $spacing-unit / 2;
+    }
+    border-radius: 15px;
+  }
+}
+
+.post-link {
+  display: block;
+  @media screen and (min-width: $on-medium) {
+    @include relative-font-size(2.25);
+  }
+  @include relative-font-size(1.75);
+  text-decoration: none;
+}
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+  @media screen and (min-width: $on-medium) {
+    margin-left: $spacing-unit / 2;
+    margin-right: $spacing-unit / 2;
+  }
+}
+
+.post-title,
+.post-content h1 {
+  @include relative-font-size(2.2);
+  letter-spacing: -1px;
+  line-height: 1.15;
+  @media screen and (min-width: $on-large) {
+    @include relative-font-size(3);
+  }
+  @media screen and (min-width: $on-medium) {
+    @include relative-font-size(3);
+  }
+
+}
+
+.post-content {
+  @media screen and (min-width: $on-medium) {
+    margin-left: $spacing-unit / 2;
+    margin-right: $spacing-unit / 2;
+  }
+  margin-bottom: $spacing-unit;
+
+  h1, h2, h3 { margin-top: $spacing-unit; color: $text-color;}
+  h4, h5, h6 { margin-top: $spacing-unit / 2; color: $text-color;}
+
+  h2 {
+    @include relative-font-size(1.75);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(2);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.375);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.625);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+  }
+
+  h5 {
+    @include relative-font-size(1.125);
+  }
+  h6 {
+    @include relative-font-size(1.0625);
+  }
+}
+
+/**
+ * Pagination navbar
+ */
+.pagination {
+  margin-bottom: $spacing-unit;
+  @extend .social-media-list;
+  li {
+    a, div {
+      min-width: 41px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    div {
+      display: block;
+      padding: $spacing-unit / 4;
+      border: 1px solid transparent;
+
+      &.pager-edge {
+        color: $border-color-01;
+        border: 1px dashed;
+      }
+    }
+  }
+}
+
+
+/**
+ * Grid helpers
+ */
+@media screen and (min-width: $on-large) {
+  .one-half {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+// CUSTOM STYLES //
+.hero {
+  padding-top: $spacing-unit / 2;
+  @extend %vertical-rhythm;
+  @media screen and (min-width: $on-medium) {
+    padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+  background: $background-color-light;
+  text-align: left;
+  color: $text-color;
+  h1 {
+    margin-bottom: 0;
+  }
+  h2 {
+    @include relative-font-size(1.3);
+    color: $text-color;
+    font-family: $p-font-family;
+    font-weight: normal;
+    @media screen and (min-width: $on-medium) {
+      @include relative-font-size(1.6);
+    }
+  }
+  h3 {
+    font-family: $p-font-family;
+    margin-bottom: -0.75rem;
+  }
+}
+
+/*
+.hero-image {
+  background: url(/assets/images/groepsfotowatermerk.jpeg) no-repeat center top; 
+  background-size: cover;
+  padding: 20% 10% 15%;
+}
+*/
+
+.hero-title {
+  @include relative-font-size(3.3);
+  font-family: $header-font-family;
+  font-weight: bold;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  margin: 5rem 0 5rem;
+  color: $background-color !important;
+  @media screen and (min-width: $on-medium) {
+    @include relative-font-size(4);
+  }
+  @media screen and (min-width: $on-large) {
+    @include relative-font-size(5);
+  }
+  
+  &:hover {
+    color: $accent;
+  }
+
+  
+}
+
+.text-box {
+  background: $brand-color-lightest;
+  padding: $spacing-unit;
+  padding-bottom: $spacing-unit / 2;
+  margin-top: $spacing-unit;
+  z-index: -100;
+  border-radius: 10px;
+  img {
+    max-height: 8rem;
+    width: auto;
+    border-radius: 50%;
+    float: right;
+    margin: 0 0.25rem 15px;
+    padding-left: 0.5rem;
+  }
+  ul, ol {
+    margin-left: $spacing-unit;
+  }
+}
+
+.relatedPosts-parent {
+    background: $background-color-lighter;
+}
+
+.img-404 {
+  max-height: 8rem;
+  width: auto;
+}
+
+@media screen and (max-width: $on-palm) {
+  .relatedPosts-parent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tag {
+  color: $brand-color;
+}
+
+.post .full-bleed {
+  width: 100vw;
+  margin-left: calc( (100vw - min(65ch, 100vw)) * (.2 / 1.2) * (-1) - 30px);
+}
+
+// Adding 'Contents' headline to the TOC
+#markdown-toc::before {
+  content: "Inhoudsopgave";
+  font-weight: bold;
+  top: 1.5em;
+  position: absolute;
+}
+
+
+// Using numbers instead of bullets for listing
+#markdown-toc ul {
+  list-style: decimal;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 3.5em 1em 1em 2em;
+  @media screen and (min-width: $on-medium) {
+    padding: 4.5em 3em 1.5em 3em;
+  }
+  list-style: decimal;
+  display: inline-block;
+  position: relative;
+  margin-left: 0;
+}
+
+// Search
+
+.search {
+  width: 100%;
+}
+
+#search-input {
+  border: none;
+  font-family: $p-font-family;
+  font-size: 1em;
+  position: relative;
+  width: 80%;
+  padding: 0.2em 0 0.2em 0.3em;
+  border-radius: 0.2em;
+  &:focus {
+    outline: none;
+  }
+}
+
+#search-input:focus {
+  background: $background-color-dark;
+}
+
+.search-line {
+  padding-left: 0em;
+  width: calc(100% - 1em);
+  position: relative;
+  padding-bottom: $spacing-unit;
+}
+
+.search-line::before {
+  position: absolute;
+  content: '';
+  height: 1em;
+  width: 0em;
+  left: 0;
+  top: 0;
+}
+
+#results-container {
+  display: fixed;
+  background: transparent;
+  list-style: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.icon {
+  display: inline-block;
+  height: 1em;
+}
+
+// ARCHIVE
+.archive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: $spacing-unit;
+}
+
+.tagcloud-child { 
+  padding-bottom: $spacing-unit;
+}
+
+.archive-grid > div {
+  grid-column: 1/3;
+}
+
+.archive-grid > div:first-child {
+  @media screen and (min-width: $on-medium) {
+    grid-column: 1/2;
+  }
+}
+
+.archive-grid > div:nth-child(2) {
+  @media screen and (min-width: $on-medium) {
+    grid-column: 2/3;
+  }
+}
+
+.archive-grid > div:last-child {
+  @media screen and (min-width: $on-medium) {
+    grid-column: 1/3;
+  }
+}
+
+.tagcloud_list {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* NDTVK EXTRA STUFF */
+.orange {
+  color: $accent;
+}
+
+.blue {
+  color: $dummy-color;
+}
+
+/* ABOUT PAGINA */
+.about-parent {
+  display: grid;
+  justify-content: stretch;
+  gap: $spacing-unit;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+@media screen and (min-width: 600px) {
+  .about-child:nth-child(1) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    outline: 4px solid $dummy-color;
+  }
+  
+  .about-child:nth-child(2) {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    outline: 4px solid $accent;
+    
+  }
+  
+  .about-child:nth-child(3) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    outline: 4px solid $accent;
+  }
+  
+  .about-child:nth-child(4) {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    outline: 4px solid $dummy-color;
+  }
+}
+
+.about-child {
+  position: relative;
+  border-radius: 5px;
+  padding: $spacing-unit;
+}
+
+.about-child:nth-child(1) {
+  outline: 4px solid $dummy-color;
+}
+
+.about-child:nth-child(2) {
+  outline: 4px solid $accent;
+  
+}
+
+.about-child:nth-child(3) {
+  outline: 4px solid $dummy-color;
+}
+
+.about-child:nth-child(4) {
+  outline: 4px solid $accent;
+}
+
+.selfie {
+  max-height: 20vh;
+  margin: 0.5rem;
+  float: left;
+}
+
+.donerenknop {
+  background-color: $accent;
+      border-radius: 7.5px;
+      color: $background-color;
+      text-decoration: none;
+      font-family: $header-font-family;
+      font-size: 1.35rem;
+      transform: translateY(-5px);
+      &:hover {
+        background-color: $dummy-color;
+      }
+}

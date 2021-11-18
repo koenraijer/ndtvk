@@ -5,7 +5,7 @@ require 'httparty'
 
 NETLIFY_PERSONAL_ACCESS_TOKEN = '8Y7somT6VFCA084VFzNZwAjwzoKXVL977Q_XwzrkPAQ'
 NETLIFY_SITE_ID =               '76cbdf11-5643-4bb6-8099-b700f16af7db'
-NETLIFY_FORM_ID =               'your_netlify_form_id_here'
+NETLIFY_FORM_ID =               '6196997ae20a900008f6b968'
 
 headers = {
   'Authorization': "Bearer #{NETLIFY_PERSONAL_ACCESS_TOKEN}"
@@ -38,4 +38,4 @@ all_messages = existing_messages_by_id
   .sort_by { |m| m['timestamp'] }
 
 # Update static data file
-File.write('_data/guestbook_messages.yml', YAML.dump(all_messages))
+File.write('_data/auction-bids.yml', YAML.dump(all_messages))

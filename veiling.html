@@ -5,23 +5,32 @@ permalink: /veiling/
 ---
 
 <div>
-    <h2>Breng je bod uit!</h2>
-  
-    <form action="/geboden" name="bid-submitter" netlify netlify-honeypot="not-for-humans">
-      <p style="display: none;">
-        <label>Don’t fill this out if you're human: <input name="not-for-humans" /></label>
-      </p>
-      <p>
-        <label>Naam<br><input placeholder="Je naam.." type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Productcijfer<br><textarea type="number" name="Het productcijfer..." placeholder="Your message..."></textarea></label>
-      </p>
-      <p>
-        <label>Bod (in €)<br><textarea name="Je bod" type="number" placeholder="Your message..."></textarea></label>
-      </p>
-      <p>
-        <button type="submit">Submit</button>
-      </p>
-    </form>
+    <div class="veiling-grid">
+        <div class="veiling-child text-box" >
+            <h2 style="margin-top: 15px;">Breng je bod uit!</h2>
+            <form action="/geboden" name="bid-submitter" netlify netlify-honeypot="not-for-humans">
+                <p style="display: none;">
+                  <label>Don’t fill this out if you're human: <input name="not-for-humans" /></label>
+                </p>
+                <p>
+                  <label>Naam<br><input placeholder="Je naam.." type="text" name="naam" /></label>
+                </p>
+                <p>
+                  <label>Product<br><textarea type="number" name="productcijfer" placeholder="Product of productcijfer..."></textarea></label>
+                </p>
+                <p>
+                  <label>Bod (in €)<br><textarea name="bod" type="number" placeholder="Je bod..."></textarea></label>
+                </p>
+                <p>
+                  <button type="submit">Verstuur</button>
+                </p>
+              </form>
+        </div>
+        <div class="veiling-child">
+            <h2 style="margin-top: 60px;">Hoe het werkt</h2>
+            <p>Onderstaande lijst bevat alle voorwerpen of activiteiten waar je op kunt bieden. Per product zie je de laatstgeboden bedragen. Heb je interesse in een product? Breng dan een bod uit via het formulier. Binnen maximaal 1-2 werkdagen zal het bod dan in de tabel verschijnen. Elke veiling heeft een einddatum. Als de einddatum verstreken is wint in principe het hoogste bod dat binnen is gekomen. Als dat bod nog niet op de website stond, krijgt het hoogste bod op de website nog de gelegenheid om te overbieden.</p>
+        </div>
+    </div>
+    
+    
   </div>

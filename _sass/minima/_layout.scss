@@ -666,3 +666,41 @@
     }
 }
 
+input, textarea {
+  margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5em;
+    width: calc(100% - 1em - 2px);
+    display: inline-block;
+    vertical-align: middle;
+    background: $background-color;
+    font-family: $p-font-family;
+}
+
+form {
+  z-index: 100;
+  button {
+    font-size: 1.35rem;
+    background: $brand-color-dark;
+    color: $background-color;
+    border: none;
+    line-height: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background: $accent;
+      transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease;
+    }
+  }
+}
+
+.veiling-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: $spacing-unit;
+  @media screen and (min-width: $on-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

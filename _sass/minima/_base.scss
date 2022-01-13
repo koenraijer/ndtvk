@@ -1,0 +1,433 @@
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                      THEME
+---------------------------------------------------------------------------------------------------------------------------------------------------*/
+@charset "utf-8";
+
+$accent:                  #cc8000 !default;
+$accent-color-light:      lighten($accent, 30%) !default;
+
+$brand-color:             rgb(140, 202, 229) !default;
+$brand-color-light:         lighten($brand-color, 5%) !default;
+$brand-color-lightest:      lighten($brand-color, 18%) !default;
+$brand-color-dark:          darken($brand-color, 25%) !default;
+
+$text-color:             #1f1f1f !default;
+$background-color:       #f8f8f8 !default; 
+$dummy-color:             #66aacc;
+
+$background-color-dark:   darken($background-color, 5%) !default;
+$background-color-light: lighten($background-color, 3.5%) !default;
+$background-color-lighter: lighten($background-color, 7%) !default;
+$background-color-lightest: lighten($background-color, 15%) !default;
+$code-background-color:  $background-color-lighter !default;
+
+$link-base-color:       $text-color !default;
+$link-visited-color:    $link-base-color !default;
+$link-hover-color:      $accent !default;
+
+$border-color-01:       $brand-color-dark !default;
+$border-color-02:       $brand-color-light !default;
+$border-color-03:       $brand-color !default;
+
+$table-text-color:      $text-color !default;
+$table-zebra-color:     lighten($background-color, 4%) !default;
+$table-header-bg-color: lighten($background-color, 10%) !default;
+$table-header-border:   lighten($background-color, 21%) !default;
+$table-border-color:    $border-color-01 !default;
+
+// Old background: d5d5d5, old accent: #ff4000 
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                      LAYOUT
+---------------------------------------------------------------------------------------------------------------------------------------------------*/
+html {
+  font-size: $base-font-size;
+}
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color-lightest;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  counter-reset: sidenote-counter;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+hr {
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  max-height: 85vh;
+  margin: auto;
+  display: block;
+}
+
+ figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+  max-width: 100%;
+  margin: auto;
+  text-align: left;
+  display: block;
+  margin-bottom: $spacing-unit * 1.5;
+}
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: $spacing-unit;
+  @media screen and (min-width: $on-medium) {
+    margin-left: $spacing-unit / 0.5;
+  }
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+  font-size: $base-font-size;
+}
+
+ol {
+  list-style: none;
+  counter-reset: mycounter;
+}
+
+ol li {
+  position: relative;
+  padding: 0 0 $spacing-unit / 3;
+}
+
+ol li::before{
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:0;
+  left:-2rem;
+  width:25px;
+  height:25px;
+  line-height:25px;
+  border-radius:50%;
+  color: $background-color;
+  font-weight: bold;
+  background: $text-color;
+  text-align:center;
+}
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+  color: $text-color;
+  font-family: $header-font-family;
+  font-weight: bold;
+}
+
+p {
+  font-family: $p-font-family;
+  letter-spacing: 0.075em;
+}
+
+
+/**
+ * Links
+ */
+a {
+  color: $link-base-color;
+  text-decoration: underline;
+  transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  padding: 0 $spacing-unit / 2 0;
+  @media screen and (min-width: $on-medium) {
+    padding: 0 $spacing-unit 0;
+  }
+  @include relative-font-size(1.1);
+  font-style: italic;
+  font-family: $p-font-family;
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-family: $code-font-family;
+  font-size: 0.9375em;
+  border: 1px solid $border-color-01;
+  border-radius: 3px;
+  background-color: $code-background-color;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  background: $code-background-color;
+  @extend %vertical-rhythm;
+
+  .highlighter-rouge & {
+    background: $code-background-color;
+  }
+}
+
+
+
+/**
+ * Wrapper
+ */
+
+.wrapper {
+  max-width: calc(#{$content-width} - (#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+  @extend %clearfix;
+
+  @media screen and (min-width: $on-large) {
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+.svg-icon {
+  width: 1.15em;
+  height: 1.15em;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+
+/**
+ * Tables
+ */
+table {
+  margin: $spacing-unit auto $spacing-unit;
+  width: 100%;
+  display: block;
+  text-align: $table-text-align;
+  color: $table-text-color;
+  border-collapse: collapse;
+  tr {
+    &:nth-child(even) {
+      background-color: $table-zebra-color;
+    }
+  }
+  
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    font-weight: normal;
+  }
+  th {
+    background-color: $background-color;
+  }
+
+  @include media-query($on-laptop) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+table tr:first-child > th {
+  font-weight: bold;
+}
+
+/* EXPANDABLES */
+//////////////////////////
+
+/*
+details {
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  transition: 0.15s background linear;
+}
+
+summary {
+  list-style: none;
+  margin: 0.25em 0 0.75em;
+  vertical-align: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+summary:focus {
+  outline: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+.information {
+  position: relative;
+  display: inline-block;
+  background-color: $background-color-light;
+  border: $text-color 2px solid;
+  border-radius: 1em;
+  margin: 0.1em 0.25em 0 0.1em;
+  top: 0.5em;
+  width: 23px;
+  height: 23px;
+}
+
+details .information::before {
+  position: absolute;
+  font-weight: bold;
+  content: '+';
+  top: -0.1em;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+details[open] .information::before {
+  position: absolute;
+  content: '-';
+  top: -0.1em;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.details-content {
+  margin-left: 0;
+  padding: 0.75em;
+  top: 0.5em;
+  background: $background-color-lighter;
+  position: relative;
+  border-radius: 0 7.5px 7.5px 7.5px;
+}
+
+details .details-content::before {
+  content: "";
+  border-bottom: 15px solid $background-color-lighter;
+  border-left: 0.75em solid transparent;
+  border-right: 0.75em solid transparent;
+  height: 0;
+  left: 0px;
+  position: absolute;
+  top: -15px;
+  width: 0;
+} */
+
+details[open] summary {
+  display: none;
+}

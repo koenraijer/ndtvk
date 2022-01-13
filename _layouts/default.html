@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <main class="page-content" aria-label="Content">
+      {%- include header.html -%}
+      <div class="wrapper">
+          {% include hero.html %}
+        
+      <div class="anythingafterhero">
+
+        {{ content }}
+      </div>
+      </div>
+      </main>
+
+    <script src="/assets/js/search-script.js"></script>
+    <script>
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        fuzzy: true,
+        limit: 10
+      })
+      </script>
+    <script data-goatcounter="https://vriendenvoorkika.goatcounter.com/count"
+    async src="//gc.zgo.at/count.js"></script>
+
+  </body>
+
+</html>

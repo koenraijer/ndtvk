@@ -72,11 +72,11 @@
 }
 
 
-$base-font-family: "Merriweather", serif;
-$p-font-family: "Merriweather", serif;
-$header-font-family: "Source Sans Pro", "Montserrat", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$base-font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$p-font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$header-font-family: "Raleway", sans-serif, "Montserrat", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 $code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace, color-emoji;
-$base-font-size:   16px !default;
+$base-font-size:   17.5px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.75 !default;

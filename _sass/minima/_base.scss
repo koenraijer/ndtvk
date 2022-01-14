@@ -3,10 +3,10 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 @charset "utf-8";
 
-$accent:                  #cc8000 !default;
+$accent:                  #FF6700 !default;
 $accent-color-light:      lighten($accent, 30%) !default;
 
-$brand-color:             rgb(140, 202, 229) !default;
+$brand-color:             #5218FA !default;
 $brand-color-light:         lighten($brand-color, 5%) !default;
 $brand-color-lightest:      lighten($brand-color, 18%) !default;
 $brand-color-dark:          darken($brand-color, 25%) !default;
@@ -34,6 +34,11 @@ $table-zebra-color:     lighten($background-color, 4%) !default;
 $table-header-bg-color: lighten($background-color, 10%) !default;
 $table-header-border:   lighten($background-color, 21%) !default;
 $table-border-color:    $border-color-01 !default;
+
+  $shadow-elevation-low:
+    0.3px 0.5px 0.9px #9c9c9c00,
+    0.5px 1px 1.7px #9c9c9c3d,
+    1px 2.1px 3.5px #9c9c9c7a;
 
 // Old background: d5d5d5, old accent: #ff4000 
 
@@ -177,14 +182,14 @@ ol li::before{
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
-  color: $text-color;
+  color: hsl(250, 94%, 25%);
   font-family: $header-font-family;
   font-weight: bold;
 }
 
 p {
   font-family: $p-font-family;
-  letter-spacing: 0.075em;
+  letter-spacing: normal;
 }
 
 
@@ -192,17 +197,13 @@ p {
  * Links
  */
 a {
-  color: $link-base-color;
-  text-decoration: underline;
+  color: $accent;
+  text-decoration: none;
   transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease;
 
-  &:visited {
-    color: $link-visited-color;
-  }
-
   &:hover {
-    color: $link-hover-color;
+    text-decoration: underline;
     transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease;
   }
@@ -279,8 +280,8 @@ pre {
   max-width: calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {

@@ -7,94 +7,33 @@
 }
 
 .site-nav {
-  padding-right: $spacing-unit / 2;
-  .nav-trigger {
-    display: none;
-  }
-
-  .menu-icon {
-    float: right;
-    width: 36px;
-    height: 26px;
-    line-height: 0;
-    padding-top: $spacing-unit;
-    text-align: center;
-    position: relative;
-    z-index: 100 !important;
-
-    > svg path {
-      fill: $text-color;
-    }
-
-    &:hover > svg path {
-      fill: $accent;
-      transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease;
-    }
-  }
-
-  label[for="nav-trigger"] {
-    display: block;
-    float: right;
-    width: 36px;
-    height: 36px;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  input ~ .trigger {
-    clear: both;
-    display: none;
-    transition: all 0.2s ease-in-out;
-  }
-
-  input:checked ~ .trigger {
-    display: block;
-    padding-bottom: 5px;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .trigger {
-    background: $background-color;
-    opacity: 0.95;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    right: 0;
-    position: fixed;
-    z-index: 1;
-    .page-link {
-      display: block;
-    }
-  } 
-
-  .trigger-menu {
-    margin-top: 50%;
+  padding: 0 $spacing-unit/2 0;
+  display: flex;
+  justify-content: space-between;
   }
 
   .regular-menu {
+    padding: 1rem 0 1rem;
     transform: translateY($spacing-unit / 2);
     .page-link {
-      display: none;
       padding: 5px 10px;
       float: right;
       margin-left: auto;
+      color: black;
+      &:hover {
+        color: $accent;
+        text-decoration: none;
+      }
     }
     .page-link:nth-child(1) {
       display: inline;
-      background-color: $accent;
+      background-color: $brand-color;
       border-radius: 7.5px;
       color: $background-color;
       text-decoration: none;
-      font-family: $header-font-family;
-      font-size: 1.35rem;
-      transform: translateY(-5px);
+      font-family: $base-font-family;
       &:hover {
-        background-color: $dummy-color;
-      }
-
-      @media screen and (max-width: $on-palm) {
-        display: none;
+        background-color: #2105a7;
       }
     }
   }
@@ -112,6 +51,8 @@
     font-size: 1.1rem;
     // Gaps between nav items, but not on the last one
     margin-left: 20px;
+    font-weight: 500;
+    text-decoration: none;
     
   }
 
@@ -120,67 +61,32 @@
     margin-left: auto;
   }
 
-  @media screen and (min-width: 620px) { /*turnt into 620 instead of $on-medium bc otherwise the logo didn't fit*/
-    position: static;
-    border: none;
-
-    .page-link:first-child{
-      background-color: $accent;
-      color: $background-color;
-      &:hover {
-        background-color: $dummy-color;
-      }
-    }
-      
-    label[for="nav-trigger"] {
-      display: none;
-    }
-
-    .menu-icon {
-      display: none;
-    }
-
-    input ~ .trigger {
-      display: none;
-    }
-
-    .trigger {
-      display: none;
-      background: transparent;
-      .page-link {
-        display: none;
-      }
-    }
-
-    .regular-menu {
-      .page-link {
-        display: inline;
-      }
-    }
-
-  }
-}
-
 
 
 .site-title {
-  margin-top: -($spacing-unit * 1.865);
+  margin: $spacing-unit*2 auto $spacing-unit;
   .logo {
-    height: $spacing-unit * 1.5;
+    height: $spacing-unit * 2.2;
     position: relative;
     display: inline-block;
+    margin-left: 0.5rem;
     transform: translateY(-$spacing-unit * 0.3);
   }
   .logo-title {
     position: relative;
+    color: black;
     transform: translateY(-$spacing-unit * 0.65);
     display: inline-block;
     font-family: $header-font-family;
-    font-size: 1.35rem;
+    font-size: 2.2rem;
+    font-weight: bold;
   }
 
   a {
     text-decoration:none;
+    &:hover {
+      color: black;
+    }
   }
 }
 
@@ -203,6 +109,7 @@
 
 .post-list-heading {
   @include relative-font-size(1.75);
+  color: hsl(250, 94%, 25%);
 }
 
 .post-list {
@@ -211,19 +118,18 @@
   position: relative;
   > li {
     margin-bottom: $spacing-unit;
-    background: transparent;
-    padding-top: $spacing-unit / 2;
-    padding-bottom: $spacing-unit / 2;
-    @media screen and (min-width: $on-medium) {
-      padding-left: $spacing-unit / 2;
-      padding-right: $spacing-unit / 2;
-    }
-    border-radius: 15px;
+    background: hsl(255, 100%, 100%);
+    border-radius: 8px;
   }
+}
+
+.post-meta {
+  color: hsl(0, 0%, 50%);
 }
 
 .post-link {
   display: block;
+  color: hsl(250, 94%, 25%);
   @media screen and (min-width: $on-medium) {
     @include relative-font-size(2.25);
   }
@@ -262,9 +168,6 @@
     margin-right: $spacing-unit / 2;
   }
   margin-bottom: $spacing-unit;
-
-  h1, h2, h3 { margin-top: $spacing-unit; color: $text-color;}
-  h4, h5, h6 { margin-top: $spacing-unit / 2; color: $text-color;}
 
   h2 {
     @include relative-font-size(1.75);
@@ -339,7 +242,7 @@
     padding-right: $spacing-unit / 2;
   }
   background: $background-color-light;
-  text-align: left;
+  text-align: center;
   color: $text-color;
   h1 {
     margin-bottom: 0;
@@ -389,14 +292,30 @@
   
 }
 
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .text-box {
-  background: $brand-color-lightest;
-  padding: $spacing-unit / 2;
-  padding-bottom: $spacing-unit / 2;
-  padding-top: $spacing-unit / 2;
-  margin-top: $spacing-unit;
+  background: linear-gradient(5deg, #000080 0%, #120293 16%, #2105a7 33%, #2d09bb 50%, #3a0ed0 66%, #4613e5 83%, #5218fa 100%);
+  color: white;
+  box-shadow: $shadow-elevation-low;
+  padding: $spacing-unit;
+  margin: $spacing-unit 0 2*$spacing-unit;
   z-index: -100;
   border-radius: 10px;
+  h2, h3 {
+    color: white;
+  }
   img {
     max-height: 8rem;
     width: auto;
@@ -408,10 +327,10 @@
   ul, ol {
     margin-left: $spacing-unit;
   }
-  @media screen and (min-width: $on-medium) {
-    padding: $spacing-unit;
-    padding-bottom: $spacing-unit / 2;
-    padding-top: $spacing-unit / 2;
+  #doneerlink {
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -439,6 +358,13 @@
   margin-left: calc( (100vw - min(65ch, 100vw)) * (.2 / 1.2) * (-1) - 30px);
 }
 
+.post {
+  margin-top: 4rem;
+}
+
+.post-article {
+  margin-top: 4rem;
+}
 // Adding 'Contents' headline to the TOC
 #markdown-toc::before {
   content: "Inhoudsopgave";
@@ -638,14 +564,23 @@
   margin-bottom: $spacing-unit / 2;
 }
 
+.img-wrapper {
+  margin: 2*$spacing-unit auto 0 ;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
 .groepsfoto {
-  @media screen and (min-width: $on-medium) {
-    max-width: 35%;
-  }
-  padding-top: $spacing-unit / 2;
-  padding-bottom: $spacing-unit / 2;
-  
+  position: relative;
+  border-radius: 10px;
+  max-height: 50vh;
+  box-shadow: $shadow-elevation-low;
+}
 
+figcaption {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .donerenknop {
@@ -690,8 +625,8 @@ form {
     cursor: pointer;
     &:hover {
       background: $accent;
-      transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease;
+      transition: all .15s ease-in-out;
+      -webkit-transition: all .15s ease;
     }
   }
 }
@@ -703,4 +638,24 @@ form {
   @media screen and (min-width: $on-medium) {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.insta-icon {
+  display: inline;
+  height: 2em;
+  transform: translateY(-0.25em);
+  padding: 5px 0;
+}
+
+.insta {
+  display: none;
+  @media screen and (min-width: $on-medium) {
+    display: block;
+  }
+}
+.socials {
+  display: flex;
+  flex-flow: row nowrap;
+  max-height: 2em;
+  padding: 2.1rem 0 1rem;
 }

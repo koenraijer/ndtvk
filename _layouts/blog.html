@@ -2,13 +2,7 @@
 layout: default
 ---
   
-  <div class="home">
-    {%- if page.title -%}
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-    </header>
-  
-    {%- endif -%}
+  <div class="post">
   
   
     {% if site.paginate %}
@@ -25,6 +19,15 @@ layout: default
       <ul class="post-list">
         {%- for post in posts -%}
         <li>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h2>
+          {%- if site.show_excerpts -%}
+          <p>{{ post.excerpt }}</p> 
+          {%- endif -%}
+
           <span class="post-meta">
             {% assign m = post.date | date: "%-m" %}
             {{ post.date | date: "%-d" }}
@@ -42,20 +45,11 @@ layout: default
                 {% when '11' %}november,
                 {% when '12' %}december,
             {% endcase %}
-  
-            {{ post.date | date: "%Y" }}
-            
-            
-            <span class="reading-time">⬩{% include reading-time.html %}</span></span>
-          <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h2>
-          
-          {%- if site.show_excerpts -%}
-          <p>{{ post.excerpt }}</p> 
-          {%- endif -%}
+
+              {{ post.date | date: "%Y" }}
+          </span>
+          <hr>
+
         </li>
         {%- endfor -%}
       </ul>

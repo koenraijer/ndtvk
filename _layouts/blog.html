@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-  
   <div class="post">
   
-  
+    <header class="post-header">
+      <h1 class="post-title">Nieuws</h1>
+    </header>
+
     {% if site.paginate %}
       {% assign posts = paginator.posts %}
     {% else %}
       {% assign posts = site.posts %}
     {% endif %}
   
-  
+
     {%- if posts.size > 0 -%}
       {%- if page.list_title -%}
         <h2 class="post-list-heading">{{ page.list_title }}</h2>
@@ -48,7 +50,6 @@ layout: default
 
               {{ post.date | date: "%Y" }}
           </span>
-          <hr>
 
         </li>
         {%- endfor -%}

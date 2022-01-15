@@ -47,6 +47,7 @@ $table-border-color:    $border-color-01 !default;
 ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 html {
   font-size: $base-font-size;
+  min-height: 100%;
 }
 
 /**
@@ -75,11 +76,13 @@ body {
           font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
+  height: 100%;
   min-height: 100vh;
   flex-direction: column;
   overflow-wrap: break-word;
   overflow-x: hidden;
   counter-reset: sidenote-counter;
+  margin-bottom: 100px;
 }
 
 

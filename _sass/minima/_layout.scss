@@ -128,8 +128,13 @@
   position: relative;
   > li {
     margin-bottom: $spacing-unit;
-    background: hsl(255, 100%, 100%);
+    background: hsl(0, 0%, 95%);
+    box-shadow: $shadow-elevation-low;
     border-radius: 8px;
+    padding: 1rem;
+    @media screen and (min-width: $on-medium) {
+      padding: 1.5rem;
+    }
   }
 }
 
@@ -519,63 +524,27 @@
   margin-bottom: $spacing-unit;
 }
 
-@media screen and (min-width: $on-medium) {
-
-  .about-parent {
-    grid-column: 1fr 1fr; 
-  }
-
-  .about-child:nth-child(1) {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    background: $brand-color-lightest;
-  }
-  
-  .about-child:nth-child(2) {
-    grid-row: 1/2;
-    grid-column: 2/3;
-    background: $accent-color-light;
-    
-  }
-  
-  .about-child:nth-child(4) {
-    grid-row: 2/3;
-    grid-column: 1/2;
-    background: $brand-color-lightest;
-  }
-  
-  .about-child:nth-child(3) {
-    grid-row: 2/3;
-    grid-column: 2/3;
-    background: $accent-color-light;
-  }
-}
-
 .about-child {
+  box-shadow: $shadow-elevation-low;
+  background: hsl(0, 0%, 95%);
   position: relative;
-  border-radius: 5px;
-
+  border-radius: 15px;
+  h2 {
+    padding-left: $spacing-unit / 2;
+  }
   p {
     padding-left: $spacing-unit / 2;
     padding-right: $spacing-unit / 2;
   }
-}
-
-.about-child:nth-child(1) {
-  background: $brand-color-lightest;
-}
-
-.about-child:nth-child(2) {
-  background: $accent-color-light;
-  
-}
-
-.about-child:nth-child(4) {
-  background: $brand-color-lightest;
-}
-
-.about-child:nth-child(3) {
-  background: $accent-color-light;
+  @media screen and (min-width: $on-medium) {
+    h2 {
+      padding-left: $spacing-unit;
+    }
+    p {
+      padding-left: $spacing-unit;
+      padding-right: $spacing-unit;
+    }
+  }
 }
 
 .selfie {
@@ -681,6 +650,11 @@ form {
 
 footer {
   padding: 0 0.5rem 1rem;
+  bottom: 0;
+  left: 0;
+  margin-top: -50;
+  height: 100px;
+  width: 100%;
   display: grid;
   justify-items: center;
   align-items: start;

@@ -1,13 +1,13 @@
 ---
-title: "2022: de tocht nadert!"
+title: "Update 2022: de tocht nadert!"
 layout: post
 ---
 
 Allereerst, heel erg bedankt aan de **tweeënzestig** mensen die geld via onze actiepagina aan KiKa gedoneerd hebben. Dankzij jullie zijn we nu op 33% van ons doelbedrag! 
 
-Een speciaal bedankje gaat uit naar Raymond Nolet van **Nolet Support B.V.**, die een bedrag van €250,- heeft gedoneerd! 
+Een speciaal bedankje gaat uit naar Raymond Nolet van **Nolet Support B.V.**, die een bedrag van €250,- heeft gedoneerd, en naar **Go-Cargo BV** die een bedrag van €150,- hebben gesponsord. Jullie zijn fantastisch!
 
-We maken ons geen illusies hoor, om aan de rest van het benodigde bedrag te komen, zullen we mensen ook iets moeten gaan bieden. Daarom zijn we in gesprek  met een aantal bedrijven, die bereidt zijn om met de producten die ze maken of financieel te ondersteunen.
+Maargoed, we maken ons geen illusies hoor, door alleen het handje hoog te houden komen we er niet! Daarom zijn we in gesprek  met een aantal bedrijven, die bereidt zijn om met de producten die ze maken of financieel te ondersteunen.
 
 Daarnaast zijn we de afgelopen week in gesprek geweest met 't Kaashuys, en kunnen we binnen 1-2 weken bestellingen aan gaan nemen voor de KiKa Kaaspakketten!
 

@@ -128,7 +128,7 @@
   position: relative;
   > li {
     margin-bottom: $spacing-unit;
-    background: hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 99%);
     box-shadow: $shadow-elevation-low;
     border-radius: 8px;
     padding: 1rem;
@@ -526,7 +526,7 @@
 
 .about-child {
   box-shadow: $shadow-elevation-low;
-  background: hsl(0, 0%, 95%);
+  background: hsl(0, 0%, 99%);
   position: relative;
   border-radius: 15px;
   h2 {

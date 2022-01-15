@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Svelte/svstarter"
+		},
+		{
+			"path": "../../../../Svelte/kaashuys"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

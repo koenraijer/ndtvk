@@ -7,9 +7,13 @@
 }
 
 .site-nav {
-  padding: 0 $spacing-unit/2 0;
+  padding: 0;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
+  @media screen and (min-width: $on-medium) {
+    padding: 0 $spacing-unit/2 0;
+  }
   }
 
   .regular-menu {
@@ -64,21 +68,20 @@
 
 
 .site-title {
-  margin: $spacing-unit*2 auto $spacing-unit;
+  margin: 0.5rem 10px 0 0;
   .logo {
-    height: $spacing-unit * 2.2;
+    height: $spacing-unit * 1.1;
     position: relative;
     display: inline-block;
     margin-left: 0.5rem;
-    transform: translateY(-$spacing-unit * 0.3);
+    transform: translateY($spacing-unit * 0.2);
   }
   .logo-title {
     position: relative;
     color: black;
-    transform: translateY(-$spacing-unit * 0.65);
     display: inline-block;
     font-family: $header-font-family;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 
@@ -309,10 +312,13 @@
   background: linear-gradient(5deg, #000080 0%, #120293 16%, #2105a7 33%, #2d09bb 50%, #3a0ed0 66%, #4613e5 83%, #5218fa 100%);
   color: white;
   box-shadow: $shadow-elevation-low;
-  padding: $spacing-unit;
+  padding: $spacing-unit / 2;
   margin: $spacing-unit 0 2*$spacing-unit;
   z-index: -100;
   border-radius: 10px;
+  @media screen and (min-width: $on-medium) {
+    padding: $spacing-unit;
+  }
   h2, h3 {
     color: white;
   }
@@ -328,8 +334,14 @@
     margin-left: $spacing-unit;
   }
   #doneerlink {
+    h3 {
+      color: $accent;
+    }
     &:hover {
       text-decoration: none;
+      h3 {
+        color: white;
+      }
     }
   }
 }
@@ -657,5 +669,33 @@ form {
   display: flex;
   flex-flow: row nowrap;
   max-height: 2em;
-  padding: 2.1rem 0 1rem;
+  padding-top: 1rem;
+}
+
+footer {
+  padding: 0 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  justify-items: center;
+  align-items: start;
+  transform: translateY($spacing-unit);
+  margin: calc($spacing-unit * 2) 0 calc($spacing-unit * 2);
+  // Column positioning
+  div {
+      display: flex;
+      flex-flow: column nowrap;
+      padding-right: $spacing-unit;
+  }
+  .right-column {
+      justify-self: center;
+  }
+}
+
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }

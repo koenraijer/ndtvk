@@ -44,7 +44,7 @@
       text-decoration: none;
       font-family: $base-font-family;
       &:hover {
-        background-color: #2105a7;
+        background-color: #330066;
       }
     }
   }
@@ -76,6 +76,7 @@
 
 .site-title {
   margin: 0.5rem 10px 0 0;
+  padding-bottom: 1rem;
   .logo {
     height: $spacing-unit * 1.1;
     position: relative;
@@ -321,7 +322,7 @@
 }
 
 .text-box {
-  background: linear-gradient(5deg, #000080 0%, #120293 16%, #2105a7 33%, #2d09bb 50%, #3a0ed0 66%, #4613e5 83%, #5218fa 100%);
+  background: linear-gradient(0deg, #330066, #3a076d, #421074, #49177b, #501f83, #57258a, #5f2c92, #663399);
   color: white;
   box-shadow: $shadow-elevation-low;
   padding: $spacing-unit / 2;
@@ -522,6 +523,7 @@
   gap: $spacing-unit;
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
+  
 }
 
 .about-child {

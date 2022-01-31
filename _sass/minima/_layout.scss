@@ -705,6 +705,7 @@ footer {
 }
 
 .sponsor-grid {
+  @extend %vertical-rhythm;
   padding: 2rem 1rem 2rem;
   max-width: 100%;
   display: grid;
@@ -712,7 +713,7 @@ footer {
   grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
-  grid-gap: 2rem;
+  row-gap: 3rem;
   column-gap: 2rem;
   h3 {
     color: $accent;
@@ -720,6 +721,27 @@ footer {
   @media screen and (min-width: $on-medium) {
       grid-template-columns: repeat(2,1fr);
       grid-template-rows: repeat(2,1fr);
+      .tonnotermans {
+        transform: scale(1.5);
+      }
+      .kaashuys {
+        transform: scale(1.5);
+      }
+      .burgerlijk {
+        transform: scale(0.75);
+      }
+      .pdaemen {
+        transform: scale(1.25);
+      }
+      .gocargo {
+        transform: scale(1.25);
+      }
+      .noletsupport {
+        transform: scale(1.25);
+      }
+      .auxilio {
+        transform: scale(1.25);
+      }
       .sponsor-child {
         &:first-child {
           grid-column: 1 / 3; 

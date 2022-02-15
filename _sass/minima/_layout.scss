@@ -336,15 +336,23 @@
     color: white;
   }
   img {
-    max-height: 8rem;
+    max-height: 12rem;
     width: auto;
     border-radius: 50%;
-    float: right;
-    margin: 0 0.25rem 15px;
+    margin: 0 0.5rem 15px;
     padding-left: 0.5rem;
   }
   ul, ol {
     margin-left: $spacing-unit;
+  }
+
+  .kaaspakket {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    @media screen and (min-width: $on-large) {
+      flex-flow: row nowrap;
+    }
   }
   #doneerlink {
     h3 {

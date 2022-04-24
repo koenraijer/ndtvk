@@ -26,10 +26,6 @@ layout: default
               {{ post.title | escape }}
             </a>
           </h2>
-          {%- if site.show_excerpts -%}
-          <p>{{ post.excerpt }}</p> 
-          {%- endif -%}
-
           <span class="post-meta">
             {% assign m = post.date | date: "%-m" %}
             {{ post.date | date: "%-d" }}
@@ -50,8 +46,15 @@ layout: default
 
               {{ post.date | date: "%Y" }}
           </span>
+          
+          {%- if site.show_excerpts -%}
+          <p>{{ post.excerpt }}</p> 
+          {%- endif -%}
+
+
 
         </li>
+        <hr>
         {%- endfor -%}
       </ul>
   
